@@ -2,6 +2,7 @@ package com.epam.java.se.task1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
 
 /**
  * Created by Мария on 06.03.2017.
@@ -32,4 +33,15 @@ public class FileBrowser {
         }
     }
 
+    public void searchOnlyTXTFiles(File directory) {
+        try {
+            FilenameFilter filter = (dir, name) -> name.endsWith(".txt");
+            String[] fileList = directory.list(filter);
+            for (String s : fileList) {
+                System.out.println(s + " ");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Directory not found");
+        }
+    }
 }
