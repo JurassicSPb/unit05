@@ -123,8 +123,7 @@ public class FileWorkerTest {
         File file = new File(".\\testfile3.txt");
 
         worker.readFromFile(browser.getDirectory(), file.toString());
-        
+
         assertTrue(file.exists() && file.length()>5);
     }
-
 }
